@@ -1,0 +1,80 @@
+[project]
+name = "ceo-triage"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "anthropic>=0.42",
+    "pydantic>=2.10",
+    "python-multipart>=0.0.20",
+    "structlog>=24.0",
+    "redis[hiredis]>=5.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9",
+    "mypy>=1.14",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.25",
+    "httpx>=0.28",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D",       # docstrings not required everywhere
+    "ANN101",  # self annotation
+    "ANN102",  # cls annotation
+    "COM812",  # trailing comma conflicts with formatter
+    "ISC001",  # string concat conflicts with formatter
+    "T20",     # print statements
+    "FBT",     # boolean positional args
+    "TD",      # todo comments
+    "FIX",     # fixme comments
+    "S101",    # assert in tests is fine
+    "PLR0913", # too many arguments (pipeline functions need many params)
+    "PLR2004", # magic values in tests
+    "ERA001",  # commented out code
+    "E501",    # line too long in prompts/test data (handled by formatter for code)
+    "C901",    # complexity (pipeline stages are inherently complex)
+    "PLR0912", # too many branches
+    "PLR0915", # too many statements (retry loop is inherently long)
+    "PLC0415", # import in function (used in tests for monkeypatch)
+    "ARG002",  # unused method args (Protocol stubs)
+    "PLW0602", # global without assignment
+    "PERF401", # list comprehension perf (readability > micro-perf)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN", "ARG", "PLC0415"]
+
+[tool.mypy]
+strict = true
+warn_return_any = true
+disallow_untyped_defs = true
+python_version = "3.12"
+mypy_path = "."
+packages = ["app"]
+
+[[tool.mypy.overrides]]
+module = "anthropic.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "structlog.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "redis.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

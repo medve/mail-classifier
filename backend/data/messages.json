@@ -1,0 +1,166 @@
+[
+  {
+    "id": 1,
+    "channel": "email",
+    "from": "Sarah Chen <sarah.chen@meridianventures.com>",
+    "to": "ceo@company.com",
+    "subject": "Follow-up: Series B timeline",
+    "timestamp": "2026-03-18T08:12:00Z",
+    "body": "Hi,\n\nGreat catching up last week. As discussed, we'd like to move forward with the due diligence process. Can we lock in a meeting this Thursday at 2pm to go through the financials? I'll have our analysts on the call as well.\n\nWould also appreciate the updated revenue projections by Wednesday if possible.\n\nBest,\nSarah"
+  },
+  {
+    "id": 2,
+    "channel": "slack",
+    "from": "tom.bradley",
+    "channel_name": "#engineering",
+    "timestamp": "2026-03-18T08:34:00Z",
+    "body": "heads up - the API migration is about 60% done. should be wrapped by friday. no blockers right now but flagging that we might need an extra day if the auth refactor takes longer than expected."
+  },
+  {
+    "id": 3,
+    "channel": "whatsapp",
+    "from": "James (COO)",
+    "timestamp": "2026-03-18T08:45:00Z",
+    "body": "Morning. Quick one - can we push the board deck review to next week? I'm still waiting on the Q1 numbers from finance and don't want to present half-baked figures."
+  },
+  {
+    "id": 4,
+    "channel": "email",
+    "from": "noreply@seczure-verify.com",
+    "to": "ceo@company.com",
+    "subject": "URGENT: Unusual login detected on your account",
+    "timestamp": "2026-03-18T09:01:00Z",
+    "body": "We detected an unusual sign-in to your account from an unrecognized device in Lagos, Nigeria. If this wasn't you, please verify your identity immediately by clicking the link below to secure your account.\n\nVerify Now: https://seczure-verify.com/auth/reset?token=8f3k2j\n\nIf you do not verify within 24 hours, your account will be permanently suspended.\n\nSecurity Team"
+  },
+  {
+    "id": 5,
+    "channel": "slack",
+    "from": "lisa.park",
+    "channel_name": "#product",
+    "timestamp": "2026-03-18T09:15:00Z",
+    "body": "FYI the Horizon project demo went well with the client yesterday. They're happy with the direction and want to see the next iteration in two weeks. No changes requested."
+  },
+  {
+    "id": 6,
+    "channel": "email",
+    "from": "David Morrison <david.m@company.com>",
+    "to": "ceo@company.com",
+    "subject": "Horizon project - concerns",
+    "timestamp": "2026-03-18T09:22:00Z",
+    "body": "Hey,\n\nWanted to flag something about Horizon. I was on the client call yesterday and I think we're overselling the timeline. The client thinks we'll have the full platform ready in 6 weeks but realistically we're looking at 10-12 weeks minimum given the current resourcing. Lisa presented it as on track but I don't think that's accurate.\n\nThink we need to have an honest conversation internally before the next client touchpoint.\n\nDavid"
+  },
+  {
+    "id": 7,
+    "channel": "whatsapp",
+    "from": "Mum",
+    "timestamp": "2026-03-18T09:30:00Z",
+    "body": "Hi love, just checking if you're still coming for dinner on Sunday? Dad's making his lasagne. Let me know so I can get the shopping in. Also your sister says hi and wants to know if you can bring that wine from last time xx"
+  },
+  {
+    "id": 8,
+    "channel": "email",
+    "from": "Rachel Kim <rachel.kim@techstaffing.io>",
+    "to": "ceo@company.com",
+    "subject": "Candidate shortlist for VP Engineering role",
+    "timestamp": "2026-03-18T09:45:00Z",
+    "body": "Hi,\n\nAs discussed, please find attached the shortlist of 4 candidates for the VP Engineering position. All have been pre-screened and are available for interviews starting next week.\n\nI'd recommend prioritising Candidate A (ex-Stripe) and Candidate C (ex-Datadog) based on your requirements. Happy to set up 30-min intro calls whenever works.\n\nLet me know how you'd like to proceed.\n\nBest,\nRachel"
+  },
+  {
+    "id": 9,
+    "channel": "slack",
+    "from": "tom.bradley",
+    "channel_name": "#engineering",
+    "timestamp": "2026-03-18T10:05:00Z",
+    "body": "update on the API migration - just found a dependency issue with the payment service. going to need to pause and figure this out. might push the timeline back to next wednesday. will keep you posted."
+  },
+  {
+    "id": 10,
+    "channel": "whatsapp",
+    "from": "James (COO)",
+    "timestamp": "2026-03-18T10:20:00Z",
+    "body": "Actually ignore my earlier message about pushing the board deck. Just spoke to finance and they can get me preliminary numbers by tomorrow. Let's keep the original Thursday slot. Also can you confirm we have the investor meeting at 2pm Thursday? Sarah from Meridian is expecting us."
+  },
+  {
+    "id": 11,
+    "channel": "email",
+    "from": "newsletter@techdigest.com",
+    "to": "ceo@company.com",
+    "subject": "This week in AI: 5 trends you can't ignore",
+    "timestamp": "2026-03-18T10:30:00Z",
+    "body": "Good morning,\n\nThis week's roundup covers the latest in AI regulation, new funding rounds, and why every CEO should be paying attention to agentic workflows.\n\n1. EU AI Act enforcement begins...\n2. Anthropic raises another $2B...\n3. Why agents are replacing dashboards...\n4. The hidden cost of AI technical debt...\n5. Interview: How one startup cut costs 40% with AI ops...\n\nRead the full newsletter at techdigest.com/weekly\n\nUnsubscribe"
+  },
+  {
+    "id": 12,
+    "channel": "slack",
+    "from": "priya.sharma",
+    "channel_name": "#sales",
+    "timestamp": "2026-03-18T10:45:00Z",
+    "body": "closed Northwind deal!! 120k ARR, 2 year contract. they want onboarding to start april 1st. @tom.bradley can eng support the integration timeline?"
+  },
+  {
+    "id": 13,
+    "channel": "whatsapp",
+    "from": "Alex (Head of People)",
+    "timestamp": "2026-03-18T11:00:00Z",
+    "body": "hey so um yeah I wanted to talk to you about something, it's not super urgent or anything but basically I had a chat with a couple of the engineering team yesterday and there's some grumbling about the new hybrid policy, like people feel it was kind of sprung on them without much consultation you know, and I think maybe we should address it before it becomes a bigger thing, oh and also completely separately I need your sign-off on the new benefits package by end of day Friday because the provider needs confirmation before the 21st or we lose the rate, anyway let me know when you have 5 mins to chat about the hybrid thing"
+  },
+  {
+    "id": 14,
+    "channel": "email",
+    "from": "Mark Zhang <mark.z@company.com>",
+    "to": "ceo@company.com",
+    "subject": "Quick update - marketing Q2 plan",
+    "timestamp": "2026-03-18T11:15:00Z",
+    "body": "Hi,\n\nJust wanted to let you know the Q2 marketing plan is finalised and the team is executing. No decisions needed from your end right now - just keeping you in the loop.\n\nHighlights: launching the new brand campaign in April, increasing paid spend by 20%, and testing two new channels (podcast sponsorships and LinkedIn thought leadership).\n\nWill share the full deck at next month's all-hands.\n\nMark"
+  },
+  {
+    "id": 15,
+    "channel": "email",
+    "from": "Laura Singh <laura.s@company.com>",
+    "to": "ceo@company.com",
+    "subject": "RE: Thursday meeting",
+    "timestamp": "2026-03-18T11:30:00Z",
+    "body": "Hi,\n\nConfirming the leadership team sync is booked for Thursday at 2pm in the main boardroom. Agenda: Q1 review, hiring update, and Horizon project status.\n\nPlease let me know if you need anything added to the agenda.\n\nThanks,\nLaura"
+  },
+  {
+    "id": 16,
+    "channel": "slack",
+    "from": "tom.bradley",
+    "channel_name": "#engineering",
+    "timestamp": "2026-03-18T11:45:00Z",
+    "body": "update on the payment service dependency - it's worse than I thought. the issue affects live transactions, not just the migration. we're seeing intermittent failures on checkout for about 3% of users right now. need a decision on whether to roll back the partial migration or push through a hotfix. rolling back is safer but sets us back 2 weeks. hotfix is faster but risky. need an answer in the next hour."
+  },
+  {
+    "id": 17,
+    "channel": "email",
+    "from": "David Morrison <david.m@company.com>",
+    "to": "ceo@company.com",
+    "subject": "RE: Horizon project - update",
+    "timestamp": "2026-03-18T12:00:00Z",
+    "body": "Hey,\n\nFollowing up on my earlier email. I spoke to Lisa and we've aligned. She agrees the 6-week timeline was optimistic. We're going to present a revised 10-week timeline to the client at the next touchpoint and frame it as a phased delivery (MVP at 6 weeks, full platform at 10).\n\nSo this is handled - no action needed from you on this anymore.\n\nDavid"
+  },
+  {
+    "id": 18,
+    "channel": "whatsapp",
+    "from": "Sarah Chen (Meridian Ventures)",
+    "timestamp": "2026-03-18T12:15:00Z",
+    "body": "Hi - just checking in on Thursday. I realise 2pm might clash with your internal meetings. Happy to do 10am instead if that's easier? Let me know. Also just to flag, our partners meeting is the following Monday so ideally we'd have the revenue projections before Thursday's call."
+  },
+  {
+    "id": 19,
+    "channel": "slack",
+    "from": "priya.sharma",
+    "channel_name": "#sales",
+    "timestamp": "2026-03-18T12:30:00Z",
+    "body": "bit of an issue with the Northwind deal I announced earlier. their legal team just came back and said they can't sign the 2-year term. they want 1 year with an option to renew. that drops the deal to 60k ARR. do we accept or push back? they're expecting an answer by end of day."
+  },
+  {
+    "id": 20,
+    "channel": "email",
+    "from": "Laura Singh <laura.s@company.com>",
+    "to": "ceo@company.com",
+    "subject": "RE: Thursday meeting - room change",
+    "timestamp": "2026-03-18T12:45:00Z",
+    "body": "Hi,\n\nSmall update - the main boardroom is booked for a client visit on Thursday afternoon. I've moved the leadership sync to 3pm in the small meeting room instead. Updated calendar invite sent.\n\nThanks,\nLaura"
+  }
+]

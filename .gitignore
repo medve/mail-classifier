@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+node_modules/
+.next/
+backend/data/people_registry.json
+backend/data/history/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
