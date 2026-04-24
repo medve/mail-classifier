@@ -77,7 +77,10 @@ EXTRACTED FACTS FROM THREADS:
 {extracted_threads_json}
 
 For each thread, classify and detect traps. Identify new people not in the registry.
-You may ONLY reference facts from the extraction above. Do not add any information."""
+You may ONLY reference facts from the extraction above. Do not add any information.
+
+Return classifications as a JSON array of classification objects. Do not return an object keyed \
+by thread_id."""
 
 
 TOOL_DEFINITION: dict[str, object] = {
@@ -88,6 +91,7 @@ TOOL_DEFINITION: dict[str, object] = {
         "properties": {
             "classifications": {
                 "type": "array",
+                "description": "Array of classification objects; never an object keyed by thread_id.",
                 "items": {
                     "type": "object",
                     "properties": {
@@ -111,6 +115,7 @@ TOOL_DEFINITION: dict[str, object] = {
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": False,
                                 "properties": {
                                     "type": {
                                         "type": "string",
@@ -154,10 +159,12 @@ TOOL_DEFINITION: dict[str, object] = {
                         },
                         "delegate_to": {
                             "type": ["object", "null"],
+                            "additionalProperties": False,
                             "properties": {
                                 "name": {"type": "string"},
                                 "role": {"type": ["string", "null"]},
                             },
+                            "required": ["name"],
                         },
                         "urgency": {
                             "type": "string",
@@ -178,12 +185,14 @@ TOOL_DEFINITION: dict[str, object] = {
                         "requires_response",
                         "topic_summary",
                     ],
+                    "additionalProperties": False,
                 },
             },
             "new_people": {
                 "type": "array",
                 "items": {
                     "type": "object",
+                    "additionalProperties": False,
                     "properties": {
                         "id": {"type": "string"},
                         "name": {"type": "string"},
@@ -198,5 +207,6 @@ TOOL_DEFINITION: dict[str, object] = {
             },
         },
         "required": ["classifications", "new_people"],
+        "additionalProperties": False,
     },
 }

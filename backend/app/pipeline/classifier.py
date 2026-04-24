@@ -1,7 +1,9 @@
 """S3: Classifier + Trap Detector."""
 
 import json
-from typing import Any
+from typing import Any, cast
+
+import structlog
 
 from app.llm import LLMClient
 from app.models import (
@@ -15,6 +17,40 @@ from app.models import (
     Urgency,
 )
 from app.prompts import classifier as prompts
+
+logger = structlog.get_logger()
+
+
+def _normalize_classification_items(result: dict[str, Any]) -> list[dict[str, Any]]:
+    raw_classifications = result.get("classifications")
+    logger.info(
+        "classifier_payload_shape",
+        classifications_type=type(raw_classifications).__name__,
+    )
+
+    if isinstance(raw_classifications, list):
+        items = raw_classifications
+    elif isinstance(raw_classifications, dict):
+        items = list(raw_classifications.values())
+    else:
+        msg = (
+            "Expected classifier result 'classifications' to be a list of objects "
+            "or an object keyed by thread_id; got "
+            f"{type(raw_classifications).__name__}"
+        )
+        raise TypeError(msg)
+
+    normalized: list[dict[str, Any]] = []
+    for index, item in enumerate(items):
+        if not isinstance(item, dict):
+            msg = (
+                f"Expected classifier result 'classifications[{index}]' to be an object; "
+                f"got {type(item).__name__}"
+            )
+            raise TypeError(msg)
+        normalized.append(cast("dict[str, Any]", item))
+
+    return normalized
 
 
 def _parse_classification(c: dict[str, Any]) -> ClassifiedItem:
@@ -80,7 +116,8 @@ async def classify(
         model=model,
     )
 
-    classifications = [_parse_classification(c) for c in result["classifications"]]
+    classification_items = _normalize_classification_items(result)
+    classifications = [_parse_classification(c) for c in classification_items]
 
     new_people = [
         Person(
@@ -132,4 +169,9 @@ async def classify_single(
         model=model,
     )
 
-    return _parse_classification(result["classifications"][0])
+    classification_items = _normalize_classification_items(result)
+    if not classification_items:
+        msg = "Expected classifier result 'classifications' to contain at least one object"
+        raise ValueError(msg)
+
+    return _parse_classification(classification_items[0])
